@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Edit{% endblock %}
+{% block content %}
+            <form method="POST" class="p-3 shadow">
+                {% csrf_token %}
+                {{ f.as_p }}
+                <h3>Are you sure to save changes?</h3>
+                <button type="submit" class="btn btn-warning">Confirm</button>
+                <a href="{% url 'todoapp:cbvhome' %}"><button class="btn btn-primary">Cancel</button></a>
+            </form>
+{% endblock %}
